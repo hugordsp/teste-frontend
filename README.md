@@ -1,29 +1,23 @@
-# teste-frontend
+## Info.
 
-This template should help get you started developing with Vue 3 in Vite.
+Frontend em VUEjs que captura api para autenticação e CRUD de uma aplicação de gerenciamento de projetos.
+O backend encontra-se no seguinte repositório: https://github.com/hugordsp/teste-frontend
 
-## Recommended IDE Setup
+## Instruções
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+Após baixar este repositório e o do front end, execute o seguinte comandos no terminal:
 
-## Customize configuration
+Backend (gpms-app)
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+Colocar arquivo .env na raiz do repositório;
+Executar comando no terminal, na raiz do repositório:
+    composer install
+    docker compose up -d (certifique-se q tenha a engine e o docker composer)
+    php artisan migrate (cria as tabelas no banco de dados)
+    php artisan db:seed --class=UserSeeder (gera um usuário no backend, é necessário ver qual ele gera no próprio banco)
+    php artisan serve (iniciar servidor localhost para a api)
+    
+Frontend (teste-frontend)
+    npm install
+    npm run dev (iniciar servidor web)
 
-## Project Setup
-
-```sh
-npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
