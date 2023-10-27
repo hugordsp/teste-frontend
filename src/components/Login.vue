@@ -1,11 +1,6 @@
 <template>
-    <div class="col-md-12">
-      <div class="card card-container">
-        <img
-          id="profile-img"
-          src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-          class="profile-img-card"
-        />
+    <div class="col-md-12 container">
+      <div class="card card-container p-4">
         <Form @submit="handleLogin" :validation-schema="schema">
           <div class="form-group">
             <label for="email">Email</label>
@@ -27,7 +22,6 @@
               <span>Login</span>
             </button>
           </div>
-  
           <div class="form-group">
             <div v-if="message" class="alert alert-danger" role="alert">
               {{ message }}

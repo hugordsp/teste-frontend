@@ -1,17 +1,8 @@
+
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand navbar-dark bg-dark">
+    <nav class="navbar navbar-expand navbar-dark bg-dark m-0">
       <a href="/" class="navbar-brand">Projects Manager</a>
-      <div class="navbar-nav mr-auto">
-        <li class="nav-item">
-          <router-link to="/home" class="nav-link">
-            <font-awesome-icon icon="home" /> Home
-          </router-link>
-        </li>
-        <!-- <li class="nav-item">
-          <router-link v-if="currentUser" to="/user" class="nav-link">User</router-link>
-        </li> -->
-      </div>
       <div v-if="!currentUser" class="navbar-nav ml-auto">
         <li class="nav-item">
           <router-link to="/register" class="nav-link">
@@ -47,24 +38,11 @@
 </template>
 
 <script>
+
 export default {
   computed: {
     currentUser() {
       return this.$store.state.auth.user;
-    },
-    showAdminBoard() {
-      if (this.currentUser && this.currentUser['roles']) {
-        return this.currentUser['roles'].includes('ROLE_ADMIN');
-      }
-
-      return false;
-    },
-    showModeratorBoard() {
-      if (this.currentUser && this.currentUser['roles']) {
-        return this.currentUser['roles'].includes('ROLE_MODERATOR');
-      }
-
-      return false;
     }
   },
   methods: {
@@ -77,6 +55,13 @@ export default {
 </script>
 
 <style scoped>
+.container {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+}
+
 header {
   line-height: 1.5;
   max-height: 100vh;
